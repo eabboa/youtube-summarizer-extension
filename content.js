@@ -47,7 +47,7 @@
     this.disabled = true;
 
     try {
-      const promptText = `Please summarize this YouTube page: ${window.location.href}`;
+      const promptText = `Can you provide a comprehensive but short summary of the given video? Start with giving 5 bullet points. And then the summary should cover all the key points and main ideas presented in the original text, while also condensing the information into a concise and easy-to-understand format. Please ensure that the summary includes relevant details and examples that support the main ideas, while avoiding any unnecessary information or repetition. The length of the summary should be appropriate for the length and complexity of the original text, providing a clear and accurate overview without omitting any important information.: ${window.location.href}`;
       await (typeof browser !== "undefined" ? browser : chrome).storage.local.set({ [STORAGE_KEY_PROMPT]: promptText });
       devLog(SCRIPT_PREFIX, "Prompt saved to storage");
       window.open(GEMINI_URL, "_blank");
